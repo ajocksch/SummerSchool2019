@@ -26,8 +26,8 @@ headerfile.close()
 rawFilename = header[1].split()[1]
 
 res_x, res_y = [int(x) for x in header[2].strip().split()[1:3]]
-print 'xdim %s' % res_x
-print 'ydim %s' % res_y
+print ('xdim %s' % res_x)
+print ('ydim %s' % res_y)
 
 data = np.fromfile(rawFilename, dtype=np.double, count=res_x*res_y, sep='')
 assert data.shape[0] == res_x * res_y, "raw data array does not match the resolution in the header"
