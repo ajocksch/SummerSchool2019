@@ -291,6 +291,7 @@ int main(int argc, char **argv)
         n, n, n, a, b, dgemm_openacc<value_type>, "OpenACC", cref.get()).second;
 
     // Run the CUBLAS kernel
+    get_cublas_handle();
     auto time_dgemm_cublas = run_benchmark(
         n, n, n, a, b, dgemm_cublas<value_type>, "CUBLAS", cref.get()).second;
 
